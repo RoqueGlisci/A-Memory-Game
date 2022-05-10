@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Memory Game</title>
+</head>
+<body>
+    <main>
+        <section class="section1">
+            <h1>Memory Game</h1>
+            <table>
+                <tr>
+                    <td><button id="b1" onclick="mostrar(1)"></button></td>
+                    <td><button id="b2" onclick="mostrar(2)"></button></td>
+                    <td><button id="b3" onclick="mostrar(3)"></button></td>
+                    <td><button id="b4" onclick="mostrar(4)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="b5" onclick="mostrar(5)"></button></td>
+                    <td><button id="b6" onclick="mostrar(6)"></button></td>
+                    <td><button id="b7" onclick="mostrar(7)"></button></td>
+                    <td><button id="b8" onclick="mostrar(8)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="b9" onclick="mostrar(9)"></button></td>
+                    <td><button id="b10" onclick="mostrar(10)"></button></td>
+                    <td><button id="b11" onclick="mostrar(11)"></button></td>
+                    <td><button id="b12" onclick="mostrar(12)"></button></td>
+                </tr>
+                <tr>
+                    <td><button id="b13" onclick="mostrar(13)"></button></td>
+                    <td><button id="b14" onclick="mostrar(14)"></button></td>
+                    <td><button id="b15" onclick="mostrar(15)"></button></td>
+                    <td><button id="b16" onclick="mostrar(16)"></button></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section2">
+            <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
+            <h2 id="tiempo_restante" class="estadisticas">Tiempo: 30 seg</h2>
+            <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>Roque Glisci games &#128516;</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
