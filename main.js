@@ -1,3 +1,4 @@
+
 // inicializando valores
 let showCards = 0;
 let card_1 = null;
