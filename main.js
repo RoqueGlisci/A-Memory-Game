@@ -7,7 +7,7 @@ let secondR = null;
 let move = 0;
 let hit = 0;
 let timer = false;
-let timerValue = 3;
+let timerValue = 30;
 let endTime = null;
 
 
@@ -50,6 +50,7 @@ function blockCard() {
         cardB.innerHTML = number[i];
         cardB.disabled = true; //desabilita los botones para que no se puedan pulsar cuando se termina el tiempo
     }
+
     Swal.fire({
         title: 'You lost !!!',
         text: 'time is up',
@@ -98,16 +99,16 @@ function show(id) {
         
         //compara si las tarjetas son iguales
         if (firstR == secondR) {
-            // si hay un asierto el contador se reinicia 
+            // si hay un acierto el contador se reinicia 
             showCards = 0;
 
-            //cundo se henera un acierto se aumenta el contador para mostrarlo en el html
+            //cundo hay un acierto se aumenta el contador en el html
             hit++;
             //mustra en el html los aciertos 
             showHits.innerHTML = `Hits: ${hit}`;
 
             if (hit == 8) {// si se completa el juego se muestra un alert 
-                clearInterval(endTime);
+                clearInterval(endTime); //desabilita los botones cundo se gana 
 
                 Swal.fire({
                     title: `You win motherfucker !!!`,
