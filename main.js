@@ -7,7 +7,7 @@ let secondR = null;
 let move = 0;
 let hit = 0;
 let timer = false;
-let timerValue = 30;
+let timerValue = 3;
 let endTime = null;
 
 
@@ -32,14 +32,32 @@ function timerOn() {
 
         //se muestra en el html en cada segundo el contador
         showTime.innerHTML = `Time: ${timerValue} sec`;
-        console.log(endTime);
 
         //cundo el contador este en 0 se corta el intervalo de tiempo 
         if (timerValue == 0) {
             clearInterval(endTime);
+            blockCard();
         }
-        
+
     }, 1000);
+}
+
+
+function blockCard() {
+    //se recorre el id de los botones para pasarle los numeros del array cuando se termina el tiempo
+    for (let i = 0; i <= 15; i++) {
+        let cardB = document.getElementById(i);
+        cardB.innerHTML = number[i];
+        cardB.disabled = true; //desabilita los botones para que no se puedan pulsar cuando se termina el tiempo
+    }
+    Swal.fire({
+        title: 'You lost !!!',
+        text: 'time is up',
+        imageUrl: './tony-soprano-sopranos.gif',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+    })
 }
 
 
@@ -89,12 +107,17 @@ function show(id) {
             showHits.innerHTML = `Hits: ${hit}`;
 
             if (hit == 8) {// si se completa el juego se muestra un alert 
+                clearInterval(endTime);
+
                 Swal.fire({
-                    icon: 'success',
-                    title: 'You win motherfucker ',
-                    showConfirmButton: false,
-                    timer: 2000
+                    title: `You win motherfucker !!!`,
+                    text: `time: ${30 - timerValue} Sec`,
+                    imageUrl: './win-dwight.gif',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
                 })
+                
             }
 
         } else {//si los valores no son iguales se tapan. mustra momentaneamente los valores y despues tapa el valor
